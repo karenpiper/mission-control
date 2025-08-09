@@ -1,0 +1,453 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Typography Scale */
+  --text-xs: 0.75rem;      /* 12px */
+  --text-sm: 0.875rem;     /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg: 1.125rem;     /* 18px */
+  --text-xl: 1.25rem;      /* 20px */
+  --text-2xl: 1.5rem;      /* 24px */
+  --text-3xl: 1.75rem;     /* 28px */
+  --text-4xl: 2.25rem;     /* 36px */
+  --text-5xl: 3rem;        /* 48px */
+
+  /* Line Heights */
+  --leading-xs: 1rem;      /* 16px */
+  --leading-sm: 1.25rem;   /* 20px */
+  --leading-base: 1.5rem;  /* 24px */
+  --leading-lg: 1.625rem;  /* 26px */
+  --leading-xl: 1.875rem;  /* 30px */
+  --leading-2xl: 2.125rem; /* 34px */
+  --leading-3xl: 2.75rem;  /* 44px */
+  --leading-4xl: 3.5rem;   /* 56px */
+
+  /* Font Weights */
+  --font-weight-normal: 450;
+  --font-weight-medium: 600;
+  --font-weight-bold: 700;
+
+  /* Spacing Scale (8pt base) */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+
+  /* Border Radius */
+  --radius-sm: 0.5rem;    /* 8px - buttons/inputs */
+  --radius-md: 1rem;      /* 16px - cards */
+  --radius-lg: 1.25rem;   /* 20px - sheets/modals */
+  --radius-xl: 1.5rem;    /* 24px - sheets/modals */
+
+  /* PAIR-01: Lime ↔ Deep Teal (Maintenance) - EXACT COLORS FROM IMAGE */
+  --pair-01-bg-100: #00B451;        /* Exact lime green */
+  --pair-01-bg-200: #00A148;        /* Deeper lime for headers */
+  --pair-01-pattern-010: rgba(0, 180, 81, 0.1);   /* 10% lime tint */
+  --pair-01-border-200: rgba(0, 180, 81, 0.24);   /* 24% lime border */
+
+  /* PAIR-02: Aqua ↔ Navy (Systems & Appliances) - EXACT COLORS FROM IMAGE */
+  --pair-02-bg-100: #00C2FF;        /* Exact bright cyan */
+  --pair-02-bg-200: #00A8E6;        /* Deeper cyan for headers */
+  --pair-02-pattern-010: rgba(0, 194, 255, 0.1);   /* 10% cyan tint */
+  --pair-02-border-200: rgba(0, 194, 255, 0.24);   /* 24% cyan border */
+
+  /* PAIR-03: Lilac ↔ Purple (Rooms) - EXACT COLORS FROM IMAGE */
+  --pair-03-bg-100: #C084FF;        /* Exact light purple */
+  --pair-03-bg-200: #B06FFF;        /* Deeper purple for headers */
+  --pair-03-pattern-010: rgba(192, 132, 255, 0.1);  /* 10% purple tint */
+  --pair-03-border-200: rgba(192, 132, 255, 0.24);  /* 24% purple border */
+
+  /* PAIR-04: Pink ↔ Magenta (Dashboard/Home & Assistant) - EXACT COLORS FROM IMAGE */
+  --pair-04-bg-100: #FF4E9A;        /* Exact hot pink */
+  --pair-04-bg-200: #FF3385;        /* Deeper pink for headers */
+  --pair-04-pattern-010: rgba(255, 78, 154, 0.1);  /* 10% pink tint */
+  --pair-04-border-200: rgba(255, 78, 154, 0.24);  /* 24% pink border */
+
+  /* PAIR-05: Peach ↔ Coral/Red (Emergency only) - EXACT COLORS FROM IMAGE */
+  --pair-05-bg-100: #FF5555;        /* Exact bright red */
+  --pair-05-bg-200: #FF3333;        /* Deeper red for headers */
+  --pair-05-pattern-010: rgba(255, 85, 85, 0.1);   /* 10% red tint */
+  --pair-05-border-200: rgba(255, 85, 85, 0.24);   /* 24% red border */
+
+  /* PAIR-06: Sand ↔ Orange/Brown (Repairs/Work log) - EXACT COLORS FROM IMAGE */
+  --pair-06-bg-100: #FF8A3D;        /* Exact bright orange */
+  --pair-06-bg-200: #FF7A1F;        /* Deeper orange for headers */
+  --pair-06-pattern-010: rgba(255, 138, 61, 0.1);  /* 10% orange tint */
+  --pair-06-border-200: rgba(255, 138, 61, 0.24);  /* 24% orange border */
+
+  /* PAIR-07: Yellow ↔ Amber (Documents/Warranties) - EXACT COLORS FROM IMAGE */
+  --pair-07-bg-100: #FFD836;        /* Exact bright yellow */
+  --pair-07-bg-200: #FFCD1C;        /* Deeper yellow for headers */
+  --pair-07-pattern-010: rgba(255, 216, 54, 0.1);   /* 10% yellow tint */
+  --pair-07-border-200: rgba(255, 216, 54, 0.24);   /* 24% yellow border */
+
+  /* Neutral Colors - OFF-WHITE & CHARCOAL */
+  --neutral-canvas-light: #FAFAFA;   /* Off-white cards/containers */
+  --neutral-canvas-dark: #1A1A1A;    /* Charcoal cards/containers */
+  --neutral-text-dark: #1A1A1A;      /* Charcoal text */
+  --neutral-text-light: #FAFAFA;     /* Off-white text */
+
+  /* Focus Ring */
+  --focus-ring: rgba(26, 26, 26, 0.24);  /* Charcoal at 24% */
+
+  /* Section Aliases - EXACT MAPPING */
+  /* Home/Dashboard */
+  --section-home-bg: var(--pair-04-bg-100);
+  --section-home-bg-deep: var(--pair-04-bg-200);
+  --section-home-pattern: var(--pair-04-pattern-010);
+  --section-home-border: var(--pair-04-border-200);
+
+  /* Rooms */
+  --section-rooms-bg: var(--pair-03-bg-100);
+  --section-rooms-bg-deep: var(--pair-03-bg-200);
+  --section-rooms-pattern: var(--pair-03-pattern-010);
+  --section-rooms-border: var(--pair-03-border-200);
+
+  /* Repairs/Work log */
+  --section-repairs-bg: var(--pair-06-bg-100);
+  --section-repairs-bg-deep: var(--pair-06-bg-200);
+  --section-repairs-pattern: var(--pair-06-pattern-010);
+  --section-repairs-border: var(--pair-06-border-200);
+
+  /* Maintenance */
+  --section-maintenance-bg: var(--pair-01-bg-100);
+  --section-maintenance-bg-deep: var(--pair-01-bg-200);
+  --section-maintenance-pattern: var(--pair-01-pattern-010);
+  --section-maintenance-border: var(--pair-01-border-200);
+
+  /* Systems & Appliances */
+  --section-systems-bg: var(--pair-02-bg-100);
+  --section-systems-bg-deep: var(--pair-02-bg-200);
+  --section-systems-pattern: var(--pair-02-pattern-010);
+  --section-systems-border: var(--pair-02-border-200);
+
+  /* Documents/Warranties */
+  --section-documents-bg: var(--pair-07-bg-100);
+  --section-documents-bg-deep: var(--pair-07-bg-200);
+  --section-documents-pattern: var(--pair-07-pattern-010);
+  --section-documents-border: var(--pair-07-border-200);
+
+  /* Assistant (defaults to Home) */
+  --section-assistant-bg: var(--pair-04-bg-100);
+  --section-assistant-bg-deep: var(--pair-04-bg-200);
+  --section-assistant-pattern: var(--pair-04-pattern-010);
+  --section-assistant-border: var(--pair-04-border-200);
+
+  /* Emergency (overlays only) */
+  --section-emergency-bg: var(--pair-05-bg-100);
+  --section-emergency-bg-deep: var(--pair-05-bg-200);
+  --section-emergency-pattern: var(--pair-05-pattern-010);
+  --section-emergency-border: var(--pair-05-border-200);
+}
+
+.dark {
+  /* PAIR-01: Deep Teal (Dark mode) - EXACT COLORS FROM IMAGE */
+  --pair-01-bg-100: #005641;        /* Exact deep teal - dark mode */
+  --pair-01-bg-200: #004A35;        /* Deeper teal for headers */
+  --pair-01-pattern-010: rgba(0, 86, 65, 0.1);  /* 10% teal tint */
+  --pair-01-border-200: rgba(0, 86, 65, 0.24);  /* 24% teal border */
+
+  /* PAIR-02: Navy (Dark mode) - EXACT COLORS FROM IMAGE */
+  --pair-02-bg-100: #0066CC;        /* Exact dark blue - dark mode */
+  --pair-02-bg-200: #0052A3;        /* Deeper blue for headers */
+  --pair-02-pattern-010: rgba(0, 102, 204, 0.1);  /* 10% blue tint */
+  --pair-02-border-200: rgba(0, 102, 204, 0.24);  /* 24% blue border */
+
+  /* PAIR-03: Purple (Dark mode) - EXACT COLORS FROM IMAGE */
+  --pair-03-bg-100: #8B5CF6;        /* Dark purple from image */
+  --pair-03-bg-200: #7C3AED;        /* Deeper purple for headers */
+  --pair-03-pattern-010: rgba(139, 92, 246, 0.1);  /* 10% purple tint */
+  --pair-03-border-200: rgba(139, 92, 246, 0.24);  /* 24% purple border */
+
+  /* PAIR-04: Magenta (Dark mode) - EXACT COLORS FROM IMAGE */
+  --pair-04-bg-100: #E91E63;        /* Dark magenta from image */
+  --pair-04-bg-200: #C2185B;        /* Deeper magenta for headers */
+  --pair-04-pattern-010: rgba(233, 30, 99, 0.1); /* 10% magenta tint */
+  --pair-04-border-200: rgba(233, 30, 99, 0.24); /* 24% magenta border */
+
+  /* PAIR-05: Coral/Red (Dark mode) - EXACT COLORS FROM IMAGE */
+  --pair-05-bg-100: #D32F2F;        /* Dark red from image */
+  --pair-05-bg-200: #B71C1C;        /* Deeper red for headers */
+  --pair-05-pattern-010: rgba(211, 47, 47, 0.1);   /* 10% red tint */
+  --pair-05-border-200: rgba(211, 47, 47, 0.24);   /* 24% red border */
+
+  /* PAIR-06: Orange/Brown (Dark mode) - EXACT COLORS FROM IMAGE */
+  --pair-06-bg-100: #FF6F00;        /* Dark orange from image */
+  --pair-06-bg-200: #E65100;        /* Deeper orange for headers */
+  --pair-06-pattern-010: rgba(255, 111, 0, 0.1);  /* 10% orange tint */
+  --pair-06-border-200: rgba(255, 111, 0, 0.24);  /* 24% orange border */
+
+  /* PAIR-07: Amber (Dark mode) - EXACT COLORS FROM IMAGE */
+  --pair-07-bg-100: #FFA000;        /* Dark amber from image */
+  --pair-07-bg-200: #FF8F00;        /* Deeper amber for headers */
+  --pair-07-pattern-010: rgba(255, 160, 0, 0.1);  /* 10% amber tint */
+  --pair-07-border-200: rgba(255, 160, 0, 0.24);  /* 24% amber border */
+}
+
+@theme inline {
+  /* Tailwind Custom Properties for Motif System */
+  --color-neutral-light: var(--neutral-canvas-light);
+  --color-neutral-dark: var(--neutral-canvas-dark);
+  --color-text-dark: var(--neutral-text-dark);
+  --color-text-light: var(--neutral-text-light);
+  --color-focus-ring: var(--focus-ring);
+
+  /* Section Colors */
+  --color-section-home: var(--section-home-bg);
+  --color-section-home-deep: var(--section-home-bg-deep);
+  --color-section-home-pattern: var(--section-home-pattern);
+  --color-section-home-border: var(--section-home-border);
+
+  --color-section-rooms: var(--section-rooms-bg);
+  --color-section-rooms-deep: var(--section-rooms-bg-deep);
+  --color-section-rooms-pattern: var(--section-rooms-pattern);
+  --color-section-rooms-border: var(--section-rooms-border);
+
+  --color-section-repairs: var(--section-repairs-bg);
+  --color-section-repairs-deep: var(--section-repairs-bg-deep);
+  --color-section-repairs-pattern: var(--section-repairs-pattern);
+  --color-section-repairs-border: var(--section-repairs-border);
+
+  --color-section-maintenance: var(--section-maintenance-bg);
+  --color-section-maintenance-deep: var(--section-maintenance-bg-deep);
+  --color-section-maintenance-pattern: var(--section-maintenance-pattern);
+  --color-section-maintenance-border: var(--section-maintenance-border);
+
+  --color-section-systems: var(--section-systems-bg);
+  --color-section-systems-deep: var(--section-systems-bg-deep);
+  --color-section-systems-pattern: var(--section-systems-pattern);
+  --color-section-systems-border: var(--section-systems-border);
+
+  --color-section-documents: var(--section-documents-bg);
+  --color-section-documents-deep: var(--section-documents-bg-deep);
+  --color-section-documents-pattern: var(--section-documents-pattern);
+  --color-section-documents-border: var(--section-documents-border);
+
+  --color-section-assistant: var(--section-assistant-bg);
+  --color-section-assistant-deep: var(--section-assistant-bg-deep);
+  --color-section-assistant-pattern: var(--section-assistant-pattern);
+  --color-section-assistant-border: var(--section-assistant-border);
+
+  --color-section-emergency: var(--section-emergency-bg);
+  --color-section-emergency-deep: var(--section-emergency-bg-deep);
+  --color-section-emergency-pattern: var(--section-emergency-pattern);
+  --color-section-emergency-border: var(--section-emergency-border);
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    font-weight: var(--font-weight-normal);
+  }
+
+  /* Display Typography (Fraunces) */
+  .font-display {
+    font-family: 'Fraunces', ui-serif, Georgia, serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "SOFT" 0, "WONK" 0;
+  }
+
+  /* UI Typography (Inter) */
+  .font-ui {
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  }
+
+  /* Mono Typography (JetBrains Mono) */
+  .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+}
+
+/**
+ * Home Mission Control Typography System - STRICT BLACK/WHITE ONLY
+ */
+@layer base {
+  /* Display Typography */
+  .display-xl {
+    font-family: 'Fraunces', ui-serif, Georgia, serif;
+    font-size: var(--text-5xl);          /* 48px */
+    line-height: var(--leading-4xl);     /* 56px */
+    font-weight: var(--font-weight-medium); /* 600 */
+  }
+
+  .display-l {
+    font-family: 'Fraunces', ui-serif, Georgia, serif;
+    font-size: var(--text-4xl);          /* 36px */
+    line-height: var(--leading-3xl);     /* 44px */
+    font-weight: var(--font-weight-medium); /* 600 */
+  }
+
+  /* Heading Typography */
+  .heading-h1 {
+    font-size: var(--text-3xl);          /* 28px */
+    line-height: var(--leading-2xl);     /* 34px */
+    font-weight: var(--font-weight-bold); /* 700 */
+  }
+
+  .heading-h2 {
+    font-size: var(--text-2xl);          /* 24px */
+    line-height: var(--leading-xl);      /* 30px */
+    font-weight: var(--font-weight-bold); /* 700 */
+  }
+
+  .heading-h3 {
+    font-size: var(--text-xl);           /* 20px */
+    line-height: var(--leading-lg);      /* 26px */
+    font-weight: var(--font-weight-medium); /* 600 */
+  }
+
+  /* Title Typography */
+  .title-m {
+    font-size: var(--text-lg);           /* 18px */
+    line-height: var(--leading-base);    /* 24px */
+    font-weight: var(--font-weight-medium); /* 600 */
+  }
+
+  /* Body Typography */
+  .body-m {
+    font-size: var(--text-base);         /* 16px */
+    line-height: var(--leading-base);    /* 24px */
+    font-weight: var(--font-weight-normal); /* 450 */
+  }
+
+  .body-s {
+    font-size: var(--text-sm);           /* 14px */
+    line-height: var(--leading-sm);      /* 20px */
+    font-weight: var(--font-weight-normal); /* 450 */
+  }
+
+  /* Label Typography */
+  .label-s {
+    font-size: var(--text-xs);           /* 12px */
+    line-height: var(--leading-xs);      /* 16px */
+    font-weight: var(--font-weight-medium); /* 600 */
+  }
+
+  /* Code Typography */
+  .mono-code-s {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    font-size: calc(var(--text-sm) * 0.93); /* ~13px */
+    line-height: var(--leading-sm);      /* 18px */
+    font-weight: 500;
+  }
+}
+
+html {
+  font-size: 16px; /* Base 16px for better readability */
+}
+
+/* Motif System Utilities */
+
+/* Text Container Cards - WHITE or NEAR-BLACK ONLY */
+.card-light {
+  background-color: var(--neutral-canvas-light);
+  color: var(--neutral-text-dark);
+  padding: 1rem 1.5rem;  /* 16-24px generous padding */
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.12); /* Subtle shadow for card edges */
+}
+
+.card-dark {
+  background-color: var(--neutral-canvas-dark);
+  color: var(--neutral-text-light);
+  padding: 1rem 1.5rem;  /* 16-24px generous padding */
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.24); /* More pronounced shadow for dark cards */
+}
+
+/* Buttons - BLACK or WHITE ONLY */
+.btn-primary-light {
+  background-color: var(--neutral-canvas-dark);
+  color: var(--neutral-text-light);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-primary-light:hover {
+  opacity: 0.9;
+}
+
+.btn-primary-dark {
+  background-color: var(--neutral-canvas-light);
+  color: var(--neutral-text-dark);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-primary-dark:hover {
+  opacity: 0.9;
+}
+
+/* Outline buttons with motif border */
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-outline:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Pattern Overlays - 10-14% tint */
+.pattern-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.pattern-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.12; /* 12% tint overlay */
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Section-specific pattern overlays */
+.pattern-home::before { background-color: var(--section-home-bg); }
+.pattern-rooms::before { background-color: var(--section-rooms-bg); }
+.pattern-repairs::before { background-color: var(--section-repairs-bg); }
+.pattern-maintenance::before { background-color: var(--section-maintenance-bg); }
+.pattern-systems::before { background-color: var(--section-systems-bg); }
+.pattern-documents::before { background-color: var(--section-documents-bg); }
+.pattern-assistant::before { background-color: var(--section-assistant-bg); }
+.pattern-emergency::before { background-color: var(--section-emergency-bg); }
+
+/* Focus States */
+.focus-ring:focus {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Elevation Shadows */
+.elevation-1 {
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.18);
+}
+
+.elevation-2 {
+  box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.20);
+}
