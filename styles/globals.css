@@ -47,47 +47,43 @@
   --radius-lg: 1.25rem;   /* 20px - sheets/modals */
   --radius-xl: 1.5rem;    /* 24px - sheets/modals */
 
-  /* PAIR-01: Lime ↔ Deep Teal (Maintenance) - EXACT COLORS FROM IMAGE */
-  --pair-01-bg-100: #00B451;        /* Exact lime green */
-  --pair-01-bg-200: #00A148;        /* Deeper lime for headers */
-  --pair-01-pattern-010: rgba(0, 180, 81, 0.1);   /* 10% lime tint */
-  --pair-01-border-200: rgba(0, 180, 81, 0.24);   /* 24% lime border */
+  /* ORIGINAL BRAND GUIDELINES COLOR PAIRS - DARK COLORS AS PRIMARY */
+  
+  /* PAIR-01: Deep Teal ↔ Lime (Maintenance) - DARK PRIMARY */
+  --pair-01-bg-100: #005641;        /* Deep teal as primary */
+  --pair-01-bg-200: #00B451;        /* Lime for headers/accents */
+  --pair-01-pattern-010: rgba(0, 86, 65, 0.1);   /* 10% deep teal tint */
+  --pair-01-border-200: rgba(0, 86, 65, 0.24);   /* 24% deep teal border */
 
-  /* PAIR-02: Aqua ↔ Navy (Systems & Appliances) - EXACT COLORS FROM IMAGE */
-  --pair-02-bg-100: #00C2FF;        /* Exact bright cyan */
-  --pair-02-bg-200: #00A8E6;        /* Deeper cyan for headers */
-  --pair-02-pattern-010: rgba(0, 194, 255, 0.1);   /* 10% cyan tint */
-  --pair-02-border-200: rgba(0, 194, 255, 0.24);   /* 24% cyan border */
+  /* PAIR-02: Navy ↔ Aqua (Systems & Appliances) - DARK PRIMARY */
+  --pair-02-bg-100: #003D73;        /* Navy as primary */
+  --pair-02-bg-200: #00C2FF;        /* Aqua for headers/accents */
+  --pair-02-pattern-010: rgba(0, 61, 115, 0.1);   /* 10% navy tint */
+  --pair-02-border-200: rgba(0, 61, 115, 0.24);   /* 24% navy border */
 
-  /* PAIR-03: Lilac ↔ Purple (Rooms) - EXACT COLORS FROM IMAGE */
-  --pair-03-bg-100: #C084FF;        /* Exact light purple */
-  --pair-03-bg-200: #B06FFF;        /* Deeper purple for headers */
-  --pair-03-pattern-010: rgba(192, 132, 255, 0.1);  /* 10% purple tint */
-  --pair-03-border-200: rgba(192, 132, 255, 0.24);  /* 24% purple border */
+  /* PAIR-03: Purple ↔ Lilac (Rooms) - DARK PRIMARY */
+  --pair-03-bg-100: #6366F1;        /* Purple as primary */
+  --pair-03-bg-200: #A5B4FC;        /* Lilac for headers/accents */
+  --pair-03-pattern-010: rgba(99, 102, 241, 0.1);  /* 10% purple tint */
+  --pair-03-border-200: rgba(99, 102, 241, 0.24);  /* 24% purple border */
 
-  /* PAIR-04: Pink ↔ Magenta (Dashboard/Home & Assistant) - EXACT COLORS FROM IMAGE */
-  --pair-04-bg-100: #FF4E9A;        /* Exact hot pink */
-  --pair-04-bg-200: #FF3385;        /* Deeper pink for headers */
-  --pair-04-pattern-010: rgba(255, 78, 154, 0.1);  /* 10% pink tint */
-  --pair-04-border-200: rgba(255, 78, 154, 0.24);  /* 24% pink border */
+  /* PAIR-05: Orange ↔ Sand (Repairs/Work log) - DARK PRIMARY */
+  --pair-05-bg-100: #FF5A1F;        /* Orange as primary */
+  --pair-05-bg-200: #FF8A3D;        /* Sand for headers/accents */
+  --pair-05-pattern-010: rgba(255, 90, 31, 0.1);  /* 10% orange tint */
+  --pair-05-border-200: rgba(255, 90, 31, 0.24);  /* 24% orange border */
 
-  /* PAIR-05: Peach ↔ Coral/Red (Emergency only) - EXACT COLORS FROM IMAGE */
-  --pair-05-bg-100: #FF5555;        /* Exact bright red */
-  --pair-05-bg-200: #FF3333;        /* Deeper red for headers */
-  --pair-05-pattern-010: rgba(255, 85, 85, 0.1);   /* 10% red tint */
-  --pair-05-border-200: rgba(255, 85, 85, 0.24);   /* 24% red border */
+  /* PAIR-06: Amber ↔ Yellow (Documents/Warranties) - DARK PRIMARY */
+  --pair-06-bg-100: #F59E0B;        /* Amber as primary */
+  --pair-06-bg-200: #FFD836;        /* Yellow for headers/accents */
+  --pair-06-pattern-010: rgba(245, 158, 11, 0.1);   /* 10% amber tint */
+  --pair-06-border-200: rgba(245, 158, 11, 0.24);   /* 24% amber border */
 
-  /* PAIR-06: Sand ↔ Orange/Brown (Repairs/Work log) - EXACT COLORS FROM IMAGE */
-  --pair-06-bg-100: #FF8A3D;        /* Exact bright orange */
-  --pair-06-bg-200: #FF7A1F;        /* Deeper orange for headers */
-  --pair-06-pattern-010: rgba(255, 138, 61, 0.1);  /* 10% orange tint */
-  --pair-06-border-200: rgba(255, 138, 61, 0.24);  /* 24% orange border */
-
-  /* PAIR-07: Yellow ↔ Amber (Documents/Warranties) - EXACT COLORS FROM IMAGE */
-  --pair-07-bg-100: #FFD836;        /* Exact bright yellow */
-  --pair-07-bg-200: #FFCD1C;        /* Deeper yellow for headers */
-  --pair-07-pattern-010: rgba(255, 216, 54, 0.1);   /* 10% yellow tint */
-  --pair-07-border-200: rgba(255, 216, 54, 0.24);   /* 24% yellow border */
+  /* PAIR-07: Emerald ↔ Green (Emergency/Alerts) - DARK PRIMARY */
+  --pair-07-bg-100: #059669;        /* Emerald as primary */
+  --pair-07-bg-200: #10B981;        /* Green for headers/accents */
+  --pair-07-pattern-010: rgba(5, 150, 105, 0.1);   /* 10% emerald tint */
+  --pair-07-border-200: rgba(5, 150, 105, 0.24);   /* 24% emerald border */
 
   /* Neutral Colors - OFF-WHITE & CHARCOAL */
   --neutral-canvas-light: #FAFAFA;   /* Off-white cards/containers */
@@ -98,98 +94,95 @@
   /* Focus Ring */
   --focus-ring: rgba(26, 26, 26, 0.24);  /* Charcoal at 24% */
 
-  /* Section Aliases - EXACT MAPPING */
-  /* Home/Dashboard */
-  --section-home-bg: var(--pair-04-bg-100);
-  --section-home-bg-deep: var(--pair-04-bg-200);
-  --section-home-pattern: var(--pair-04-pattern-010);
-  --section-home-border: var(--pair-04-border-200);
+  /* Section Aliases - NEW MAPPING WITHOUT PINK/MAGENTA */
+  
+  /* Home/Dashboard - NOW USES DEEP TEAL/LIME */
+  --section-home-bg: var(--pair-01-bg-100);
+  --section-home-bg-deep: var(--pair-01-bg-200);
+  --section-home-pattern: var(--pair-01-pattern-010);
+  --section-home-border: var(--pair-01-border-200);
 
-  /* Rooms */
+  /* Rooms - USES PURPLE/LILAC */
   --section-rooms-bg: var(--pair-03-bg-100);
   --section-rooms-bg-deep: var(--pair-03-bg-200);
   --section-rooms-pattern: var(--pair-03-pattern-010);
   --section-rooms-border: var(--pair-03-border-200);
 
-  /* Repairs/Work log */
-  --section-repairs-bg: var(--pair-06-bg-100);
-  --section-repairs-bg-deep: var(--pair-06-bg-200);
-  --section-repairs-pattern: var(--pair-06-pattern-010);
-  --section-repairs-border: var(--pair-06-border-200);
+  /* Repairs/Work log - USES ORANGE/SAND */
+  --section-repairs-bg: var(--pair-05-bg-100);
+  --section-repairs-bg-deep: var(--pair-05-bg-200);
+  --section-repairs-pattern: var(--pair-05-pattern-010);
+  --section-repairs-border: var(--pair-05-border-200);
 
-  /* Maintenance */
+  /* Maintenance - USES DEEP TEAL/LIME */
   --section-maintenance-bg: var(--pair-01-bg-100);
   --section-maintenance-bg-deep: var(--pair-01-bg-200);
   --section-maintenance-pattern: var(--pair-01-pattern-010);
   --section-maintenance-border: var(--pair-01-border-200);
 
-  /* Systems & Appliances */
+  /* Systems & Appliances - USES NAVY/AQUA */
   --section-systems-bg: var(--pair-02-bg-100);
   --section-systems-bg-deep: var(--pair-02-bg-200);
   --section-systems-pattern: var(--pair-02-pattern-010);
   --section-systems-border: var(--pair-02-border-200);
 
-  /* Documents/Warranties */
-  --section-documents-bg: var(--pair-07-bg-100);
-  --section-documents-bg-deep: var(--pair-07-bg-200);
-  --section-documents-pattern: var(--pair-07-pattern-010);
-  --section-documents-border: var(--pair-07-border-200);
+  /* Documents/Warranties - USES AMBER/YELLOW */
+  --section-documents-bg: var(--pair-06-bg-100);
+  --section-documents-bg-deep: var(--pair-06-bg-200);
+  --section-documents-pattern: var(--pair-06-pattern-010);
+  --section-documents-border: var(--pair-06-border-200);
 
-  /* Assistant (defaults to Home) */
-  --section-assistant-bg: var(--pair-04-bg-100);
-  --section-assistant-bg-deep: var(--pair-04-bg-200);
-  --section-assistant-pattern: var(--pair-04-pattern-010);
-  --section-assistant-border: var(--pair-04-border-200);
+  /* Assistant - USES EMERALD/GREEN */
+  --section-assistant-bg: var(--pair-07-bg-100);
+  --section-assistant-bg-deep: var(--pair-07-bg-200);
+  --section-assistant-pattern: var(--pair-07-pattern-010);
+  --section-assistant-border: var(--pair-07-border-200);
 
-  /* Emergency (overlays only) */
-  --section-emergency-bg: var(--pair-05-bg-100);
-  --section-emergency-bg-deep: var(--pair-05-bg-200);
-  --section-emergency-pattern: var(--pair-05-pattern-010);
-  --section-emergency-border: var(--pair-05-border-200);
+  /* Emergency (overlays only) - USES EMERALD/GREEN */
+  --section-emergency-bg: var(--pair-07-bg-100);
+  --section-emergency-bg-deep: var(--pair-07-bg-200);
+  --section-emergency-pattern: var(--pair-07-pattern-010);
+  --section-emergency-border: var(--pair-07-border-200);
 }
 
 .dark {
-  /* PAIR-01: Deep Teal (Dark mode) - EXACT COLORS FROM IMAGE */
-  --pair-01-bg-100: #005641;        /* Exact deep teal - dark mode */
-  --pair-01-bg-200: #004A35;        /* Deeper teal for headers */
-  --pair-01-pattern-010: rgba(0, 86, 65, 0.1);  /* 10% teal tint */
-  --pair-01-border-200: rgba(0, 86, 65, 0.24);  /* 24% teal border */
+  /* DARK MODE - LIGHTER VERSIONS OF THE SAME COLORS */
+  
+  /* PAIR-01: Deep Teal ↔ Lime (Dark mode) */
+  --pair-01-bg-100: #047857;        /* Lighter deep teal - dark mode */
+  --pair-01-bg-200: #22C55E;        /* Brighter lime for headers */
+  --pair-01-pattern-010: rgba(4, 120, 87, 0.1);  /* 10% teal tint */
+  --pair-01-border-200: rgba(4, 120, 87, 0.24);  /* 24% teal border */
 
-  /* PAIR-02: Navy (Dark mode) - EXACT COLORS FROM IMAGE */
-  --pair-02-bg-100: #0066CC;        /* Exact dark blue - dark mode */
-  --pair-02-bg-200: #0052A3;        /* Deeper blue for headers */
-  --pair-02-pattern-010: rgba(0, 102, 204, 0.1);  /* 10% blue tint */
-  --pair-02-border-200: rgba(0, 102, 204, 0.24);  /* 24% blue border */
+  /* PAIR-02: Navy ↔ Aqua (Dark mode) */
+  --pair-02-bg-100: #1E40AF;        /* Lighter navy - dark mode */
+  --pair-02-bg-200: #38BDF8;        /* Brighter aqua for headers */
+  --pair-02-pattern-010: rgba(30, 64, 175, 0.1);  /* 10% navy tint */
+  --pair-02-border-200: rgba(30, 64, 175, 0.24);  /* 24% navy border */
 
-  /* PAIR-03: Purple (Dark mode) - EXACT COLORS FROM IMAGE */
-  --pair-03-bg-100: #8B5CF6;        /* Dark purple from image */
-  --pair-03-bg-200: #7C3AED;        /* Deeper purple for headers */
-  --pair-03-pattern-010: rgba(139, 92, 246, 0.1);  /* 10% purple tint */
-  --pair-03-border-200: rgba(139, 92, 246, 0.24);  /* 24% purple border */
+  /* PAIR-03: Purple ↔ Lilac (Dark mode) */
+  --pair-03-bg-100: #7C3AED;        /* Lighter purple - dark mode */
+  --pair-03-bg-200: #C4B5FD;        /* Brighter lilac for headers */
+  --pair-03-pattern-010: rgba(124, 58, 237, 0.1);  /* 10% purple tint */
+  --pair-03-border-200: rgba(124, 58, 237, 0.24);  /* 24% purple border */
 
-  /* PAIR-04: Magenta (Dark mode) - EXACT COLORS FROM IMAGE */
-  --pair-04-bg-100: #E91E63;        /* Dark magenta from image */
-  --pair-04-bg-200: #C2185B;        /* Deeper magenta for headers */
-  --pair-04-pattern-010: rgba(233, 30, 99, 0.1); /* 10% magenta tint */
-  --pair-04-border-200: rgba(233, 30, 99, 0.24); /* 24% magenta border */
+  /* PAIR-05: Orange ↔ Sand (Dark mode) */
+  --pair-05-bg-100: #EA580C;        /* Lighter orange - dark mode */
+  --pair-05-bg-200: #FB923C;        /* Brighter sand for headers */
+  --pair-05-pattern-010: rgba(234, 88, 12, 0.1);  /* 10% orange tint */
+  --pair-05-border-200: rgba(234, 88, 12, 0.24);  /* 24% orange border */
 
-  /* PAIR-05: Coral/Red (Dark mode) - EXACT COLORS FROM IMAGE */
-  --pair-05-bg-100: #D32F2F;        /* Dark red from image */
-  --pair-05-bg-200: #B71C1C;        /* Deeper red for headers */
-  --pair-05-pattern-010: rgba(211, 47, 47, 0.1);   /* 10% red tint */
-  --pair-05-border-200: rgba(211, 47, 47, 0.24);   /* 24% red border */
+  /* PAIR-06: Amber ↔ Yellow (Dark mode) */
+  --pair-06-bg-100: #D97706;        /* Lighter amber - dark mode */
+  --pair-06-bg-200: #FCD34D;        /* Brighter yellow for headers */
+  --pair-06-pattern-010: rgba(217, 119, 6, 0.1);   /* 10% amber tint */
+  --pair-06-border-200: rgba(217, 119, 6, 0.24);   /* 24% amber border */
 
-  /* PAIR-06: Orange/Brown (Dark mode) - EXACT COLORS FROM IMAGE */
-  --pair-06-bg-100: #FF6F00;        /* Dark orange from image */
-  --pair-06-bg-200: #E65100;        /* Deeper orange for headers */
-  --pair-06-pattern-010: rgba(255, 111, 0, 0.1);  /* 10% orange tint */
-  --pair-06-border-200: rgba(255, 111, 0, 0.24);  /* 24% orange border */
-
-  /* PAIR-07: Amber (Dark mode) - EXACT COLORS FROM IMAGE */
-  --pair-07-bg-100: #FFA000;        /* Dark amber from image */
-  --pair-07-bg-200: #FF8F00;        /* Deeper amber for headers */
-  --pair-07-pattern-010: rgba(255, 160, 0, 0.1);  /* 10% amber tint */
-  --pair-07-border-200: rgba(255, 160, 0, 0.24);  /* 24% amber border */
+  /* PAIR-07: Emerald ↔ Green (Dark mode) */
+  --pair-07-bg-100: #065F46;        /* Lighter emerald - dark mode */
+  --pair-07-bg-200: #34D399;        /* Brighter green for headers */
+  --pair-07-pattern-010: rgba(6, 95, 70, 0.1);   /* 10% emerald tint */
+  --pair-07-border-200: rgba(6, 95, 70, 0.24);   /* 24% emerald border */
 }
 
 @theme inline {

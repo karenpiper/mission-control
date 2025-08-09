@@ -62,43 +62,43 @@ const navigationItems: NavItem[] = [
     id: 'dashboard',
     label: 'Home Dashboard',
     icon: <Home className="w-5 h-5" />,
-    colorScheme: 'section-home' // Pink ↔ Magenta (Pair-04)
+    colorScheme: 'section-home' // Deep Teal ↔ Lime
   },
   {
     id: 'rooms',
     label: 'My Rooms',
     icon: <Thermometer className="w-5 h-5" />,
-    colorScheme: 'section-rooms' // Lilac ↔ Purple (Pair-03)
+    colorScheme: 'section-rooms' // Purple ↔ Lilac
   },
   {
     id: 'tasks',
     label: 'Tasks & Care',
     icon: <CheckCircle2 className="w-5 h-5" />,
-    colorScheme: 'section-maintenance' // Lime ↔ Deep Teal (Pair-01)
+    colorScheme: 'section-maintenance' // Deep Teal ↔ Lime
   },
   {
     id: 'repair',
     label: 'Fix & Repair',
     icon: <Wrench className="w-5 h-5" />,
-    colorScheme: 'section-repairs' // Sand ↔ Orange (Pair-06)
+    colorScheme: 'section-repairs' // Orange ↔ Sand
   },
   {
     id: 'ai',
     label: 'AI Helper',
     icon: <Bot className="w-5 h-5" />,
-    colorScheme: 'section-assistant' // Pink ↔ Magenta (Pair-04)
+    colorScheme: 'section-assistant' // Emerald ↔ Green
   },
   {
     id: 'systems',
     label: 'Systems',
     icon: <Settings className="w-5 h-5" />,
-    colorScheme: 'section-systems' // Aqua ↔ Navy (Pair-02)
+    colorScheme: 'section-systems' // Navy ↔ Aqua
   },
   {
     id: 'documents',
     label: 'Documents',
     icon: <FileText className="w-5 h-5" />,
-    colorScheme: 'section-documents' // Yellow ↔ Amber (Pair-07)
+    colorScheme: 'section-documents' // Amber ↔ Yellow
   }
 ];
 
@@ -250,7 +250,7 @@ const Sidebar: React.FC<{ isOpen: boolean; onClose: () => void; activeItem: stri
                   backgroundColor: `var(--${navigationItems.find(item => item.id === activeItem)?.colorScheme || 'section-home'}-bg)`
                 }}
               >
-                <span className="text-white text-xs font-medium">Light</span>
+                <span className="text-white text-xs font-medium">Dark</span>
               </div>
               <div 
                 className="flex-1 h-8 rounded flex items-center justify-center"
@@ -258,11 +258,11 @@ const Sidebar: React.FC<{ isOpen: boolean; onClose: () => void; activeItem: stri
                   backgroundColor: `var(--${navigationItems.find(item => item.id === activeItem)?.colorScheme || 'section-home'}-bg-deep)`
                 }}
               >
-                <span className="text-white text-xs font-medium">Deep</span>
+                <span className="text-black text-xs font-medium">Light</span>
               </div>
             </div>
             <p className="body-s text-neutral-text-dark opacity-70 text-center">
-              Click sections above to see color pairs change
+              Dark colors are primary, light colors for accents
             </p>
           </div>
         </div>
@@ -286,11 +286,11 @@ const renderSectionContent = (activeSection: string, colorScheme: string) => {
 
   return (
     <>
-      {/* Hero Section - Light color background with WHITE TEXT */}
+      {/* Hero Section - Dark Primary Background with WHITE TEXT */}
       <div 
         className="rounded-2xl p-8 relative overflow-hidden mb-6"
         style={{ 
-          backgroundColor: `var(--${colorScheme}-bg)`,
+          backgroundColor: `var(--${colorScheme}-bg)`,  // Dark color as background
           color: '#FFFFFF'
         }}
       >
@@ -299,23 +299,24 @@ const renderSectionContent = (activeSection: string, colorScheme: string) => {
             <div className="flex items-center gap-4">
               <div 
                 className="p-2 rounded-lg"
-                style={{ backgroundColor: `var(--${colorScheme}-bg-deep)` }}
+                style={{ backgroundColor: 'rgba(255, 255, 255, 0.2)' }}  // Semi-transparent white
               >
-                <span style={{ color: `var(--${colorScheme}-bg)` }}>
+                <span style={{ color: '#FFFFFF' }}>
                   {currentSection.icon}
                 </span>
               </div>
               <div>
                 <h1 className="display-xl font-display mb-2" style={{ color: '#FFFFFF' }}>{currentSection.title}</h1>
-                <p className="title-m" style={{ color: '#FFFFFF', opacity: 0.9 }}>{currentSection.subtitle}</p>
+                <p className="title-m" style={{ color: `var(--${colorScheme}-bg-deep)` }}>{currentSection.subtitle}</p>
               </div>
             </div>
             <div className="flex gap-3">
               <Button 
                 className="hover:opacity-90"
                 style={{
-                  backgroundColor: `var(--${colorScheme}-bg-deep)`,
-                  color: '#FFFFFF'
+                  backgroundColor: 'rgba(255, 255, 255, 0.2)',  // Semi-transparent white
+                  color: '#FFFFFF',
+                  border: '1px solid rgba(255, 255, 255, 0.3)'
                 }}
               >
                 <Camera className="w-4 h-4 mr-2" />
@@ -339,7 +340,7 @@ const renderSectionContent = (activeSection: string, colorScheme: string) => {
             <div 
               className="rounded-lg p-4" 
               style={{ 
-                backgroundColor: `var(--${colorScheme}-bg-deep)`,
+                backgroundColor: 'rgba(255, 255, 255, 0.15)',  // Semi-transparent cards
                 color: '#FFFFFF'
               }}
             >
@@ -353,7 +354,7 @@ const renderSectionContent = (activeSection: string, colorScheme: string) => {
             <div 
               className="rounded-lg p-4" 
               style={{ 
-                backgroundColor: `var(--${colorScheme}-bg-deep)`,
+                backgroundColor: 'rgba(255, 255, 255, 0.15)',  // Semi-transparent cards
                 color: '#FFFFFF'
               }}
             >
@@ -367,7 +368,7 @@ const renderSectionContent = (activeSection: string, colorScheme: string) => {
             <div 
               className="rounded-lg p-4" 
               style={{ 
-                backgroundColor: `var(--${colorScheme}-bg-deep)`,
+                backgroundColor: 'rgba(255, 255, 255, 0.15)',  // Semi-transparent cards
                 color: '#FFFFFF'
               }}
             >
@@ -388,20 +389,20 @@ const renderSectionContent = (activeSection: string, colorScheme: string) => {
           <h2 className="heading-h2 text-neutral-text-dark mb-4">Motif System Demonstration</h2>
           <p className="body-m text-neutral-text-dark mb-6">
             You're viewing the <strong>{currentSection.title}</strong> section using <strong>{colorScheme}</strong> color pair.
-            The "{currentSection.title}" hero section above uses both motif colors with <strong>pure white text</strong> for maximum contrast and readability. The site header and content cards use neutral colors with strategic color accents.
+            The "{currentSection.title}" hero section above uses the <strong>dark color as primary background</strong> with pure white text, and the <strong>light color for accent text</strong>. Dark colors are now primary, light colors are accents.
           </p>
           <div className="flex justify-center gap-4 mb-4">
             <div 
               className="w-16 h-16 rounded-lg flex items-center justify-center"
               style={{ backgroundColor: `var(--${colorScheme}-bg)` }}
             >
-              <span className="text-white font-bold text-xs">Light</span>
+              <span className="text-white font-bold text-xs">Dark</span>
             </div>
             <div 
               className="w-16 h-16 rounded-lg flex items-center justify-center"
               style={{ backgroundColor: `var(--${colorScheme}-bg-deep)` }}
             >
-              <span className="text-white font-bold text-xs">Deep</span>
+              <span className="text-black font-bold text-xs">Light</span>
             </div>
           </div>
           <p className="body-s text-neutral-text-dark opacity-70 mb-4">
@@ -412,7 +413,10 @@ const renderSectionContent = (activeSection: string, colorScheme: string) => {
               Current: <span className="font-bold">{colorScheme}</span>
             </p>
             <p className="mono-code-s text-neutral-text-dark">
-              CSS Var: <span className="font-bold">var(--{colorScheme}-bg)</span>
+              Dark Primary: <span className="font-bold">var(--{colorScheme}-bg)</span>
+            </p>
+            <p className="mono-code-s text-neutral-text-dark">
+              Light Accent: <span className="font-bold">var(--{colorScheme}-bg-deep)</span>
             </p>
           </div>
         </div>
@@ -448,7 +452,7 @@ const DashboardContent: React.FC<{ activeSection: string }> = ({ activeSection }
             <div className="flex items-center gap-2 mb-4">
               <Lightbulb 
                 className="w-6 h-6" 
-                style={{ color: `var(--${colorScheme}-bg)` }}
+                style={{ color: `var(--${colorScheme}-bg-deep)` }}  // Light accent color
               />
               <span className="label-s uppercase tracking-wide text-neutral-text-dark">
                 Energy Efficiency
@@ -460,7 +464,7 @@ const DashboardContent: React.FC<{ activeSection: string }> = ({ activeSection }
             <div className="flex items-center gap-2 mb-3">
               <TrendingUp 
                 className="w-4 h-4" 
-                style={{ color: `var(--${colorScheme}-bg)` }}
+                style={{ color: `var(--${colorScheme}-bg-deep)` }}  // Light accent color
               />
               <p className="body-s text-neutral-text-dark">
                 +5% from last month
@@ -471,7 +475,7 @@ const DashboardContent: React.FC<{ activeSection: string }> = ({ activeSection }
                 className="h-2 rounded-full" 
                 style={{ 
                   width: '85%', 
-                  backgroundColor: `var(--${colorScheme}-bg)` 
+                  backgroundColor: `var(--${colorScheme}-bg)`  // Dark primary color
                 }}
               />
             </div>
@@ -486,7 +490,7 @@ const DashboardContent: React.FC<{ activeSection: string }> = ({ activeSection }
             <div className="flex items-center gap-2 mb-4">
               <Users 
                 className="w-6 h-6" 
-                style={{ color: `var(--${colorScheme}-bg)` }}
+                style={{ color: `var(--${colorScheme}-bg-deep)` }}  // Light accent color
               />
               <span className="label-s uppercase tracking-wide text-neutral-text-dark">
                 Repair Budget
@@ -503,7 +507,7 @@ const DashboardContent: React.FC<{ activeSection: string }> = ({ activeSection }
                 className="h-2 rounded-full" 
                 style={{ 
                   width: '57%', 
-                  backgroundColor: `var(--${colorScheme}-bg)` 
+                  backgroundColor: `var(--${colorScheme}-bg)`  // Dark primary color
                 }}
               />
             </div>
@@ -518,7 +522,7 @@ const DashboardContent: React.FC<{ activeSection: string }> = ({ activeSection }
             <div className="flex items-center gap-2 mb-4">
               <Wrench 
                 className="w-6 h-6" 
-                style={{ color: `var(--${colorScheme}-bg)` }}
+                style={{ color: `var(--${colorScheme}-bg-deep)` }}  // Light accent color
               />
               <span className="label-s uppercase tracking-wide text-neutral-text-dark">
                 Recent Repairs
@@ -533,7 +537,7 @@ const DashboardContent: React.FC<{ activeSection: string }> = ({ activeSection }
             <button
               className="w-full py-2 rounded-lg font-medium transition-opacity hover:opacity-90"
               style={{
-                backgroundColor: `var(--${colorScheme}-bg)`,
+                backgroundColor: `var(--${colorScheme}-bg)`,  // Dark primary color
                 color: '#FFFFFF'
               }}
             >
@@ -550,7 +554,7 @@ const DashboardContent: React.FC<{ activeSection: string }> = ({ activeSection }
             <div className="flex items-center gap-2 mb-4">
               <FileText 
                 className="w-6 h-6" 
-                style={{ color: `var(--${colorScheme}-bg)` }}
+                style={{ color: `var(--${colorScheme}-bg-deep)` }}  // Light accent color
               />
               <span className="label-s uppercase tracking-wide text-neutral-text-dark">
                 Documents
@@ -565,7 +569,7 @@ const DashboardContent: React.FC<{ activeSection: string }> = ({ activeSection }
             <button
               className="w-full py-2 rounded-lg font-medium transition-opacity hover:opacity-90 flex items-center justify-center gap-2"
               style={{
-                backgroundColor: `var(--${colorScheme}-bg)`,
+                backgroundColor: `var(--${colorScheme}-bg)`,  // Dark primary color
                 color: '#FFFFFF'
               }}
             >
@@ -580,11 +584,11 @@ const DashboardContent: React.FC<{ activeSection: string }> = ({ activeSection }
           {/* Priority Tasks */}
           <div className="lg:col-span-2">
             <div className="card-light h-full">
-              {/* Section Header with Color */}
+              {/* Section Header with Dark Color */}
               <div 
                 className="rounded-lg p-4 mb-6"
                 style={{ 
-                  backgroundColor: `var(--${colorScheme}-bg)`,
+                  backgroundColor: `var(--${colorScheme}-bg)`,  // Dark primary color
                   color: '#FFFFFF'
                 }}
               >
@@ -592,7 +596,7 @@ const DashboardContent: React.FC<{ activeSection: string }> = ({ activeSection }
                   <CheckCircle2 className="w-6 h-6" style={{ color: '#FFFFFF' }} />
                   Priority Tasks
                 </h2>
-                <p className="body-s" style={{ color: '#FFFFFF', opacity: 0.9 }}>Items requiring your attention</p>
+                <p className="body-s" style={{ color: `var(--${colorScheme}-bg-deep)` }}>Items requiring your attention</p>
               </div>
               
               <div className="space-y-4">
@@ -603,7 +607,7 @@ const DashboardContent: React.FC<{ activeSection: string }> = ({ activeSection }
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
                         {task.status === 'in-progress' ? (
-                          <Clock className="w-4 h-4" style={{ color: `var(--${colorScheme}-bg)` }} />
+                          <Clock className="w-4 h-4" style={{ color: `var(--${colorScheme}-bg-deep)` }} />
                         ) : task.priority === 'high' ? (
                           <AlertTriangle className="w-4 h-4 text-red-500" />
                         ) : (
@@ -627,7 +631,7 @@ const DashboardContent: React.FC<{ activeSection: string }> = ({ activeSection }
                       <button
                         className="px-4 py-2 rounded-lg font-medium transition-opacity hover:opacity-90"
                         style={{
-                          backgroundColor: `var(--${colorScheme}-bg)`,
+                          backgroundColor: `var(--${colorScheme}-bg)`,  // Dark primary color
                           color: '#FFFFFF'
                         }}
                       >
@@ -646,11 +650,11 @@ const DashboardContent: React.FC<{ activeSection: string }> = ({ activeSection }
           {/* Room Status */}
           <div className="space-y-6">
             <div className="card-light">
-              {/* Section Header with Color */}
+              {/* Section Header with Dark Color */}
               <div 
                 className="rounded-lg p-4 mb-6"
                 style={{ 
-                  backgroundColor: `var(--${colorScheme}-bg)`,
+                  backgroundColor: `var(--${colorScheme}-bg)`,  // Dark primary color
                   color: '#FFFFFF'
                 }}
               >
@@ -664,7 +668,7 @@ const DashboardContent: React.FC<{ activeSection: string }> = ({ activeSection }
                 {mockRooms.map((room, index) => (
                   <div key={room.id} className="p-3 bg-gray-50 rounded-lg border-l-4" style={{
                     borderLeftColor: room.status === 'optimal' ? `var(--${colorScheme}-bg)` : 
-                                   room.status === 'needs-attention' ? '#FF8A3D' : '#FF5555'
+                                   room.status === 'needs-attention' ? '#FF5A1F' : '#DC2626'
                   }}>
                     <div className="flex items-center justify-between mb-2">
                       <h4 className="body-m font-medium text-neutral-text-dark">{room.name}</h4>
@@ -672,8 +676,8 @@ const DashboardContent: React.FC<{ activeSection: string }> = ({ activeSection }
                         <div 
                           className="w-2 h-2 rounded-full"
                           style={{ 
-                            backgroundColor: room.status === 'optimal' ? `var(--${colorScheme}-bg)` : 
-                                           room.status === 'needs-attention' ? '#FF8A3D' : '#FF5555'
+                            backgroundColor: room.status === 'optimal' ? `var(--${colorScheme}-bg-deep)` : 
+                                           room.status === 'needs-attention' ? '#FF8A3D' : '#EF4444'
                           }}
                         />
                         <Badge 
@@ -693,7 +697,7 @@ const DashboardContent: React.FC<{ activeSection: string }> = ({ activeSection }
             <div 
               className="rounded-lg p-6 text-center relative overflow-hidden"
               style={{ 
-                backgroundColor: `var(--${colorScheme}-bg)`,
+                backgroundColor: `var(--${colorScheme}-bg)`,  // Dark primary color
                 color: '#FFFFFF'
               }}
             >
@@ -701,14 +705,15 @@ const DashboardContent: React.FC<{ activeSection: string }> = ({ activeSection }
               <h3 className="heading-h2 font-display mb-2" style={{ color: '#FFFFFF' }}>
                 AI Helper
               </h3>
-              <p className="body-m mb-4" style={{ color: '#FFFFFF', opacity: 0.9 }}>
+              <p className="body-m mb-4" style={{ color: `var(--${colorScheme}-bg-deep)` }}>
                 Get intelligent recommendations for your home
               </p>
               <button
                 className="px-6 py-3 rounded-lg font-medium transition-opacity hover:opacity-90"
                 style={{
-                  backgroundColor: `var(--${colorScheme}-bg-deep)`,
-                  color: '#FFFFFF'
+                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                  color: '#FFFFFF',
+                  border: '1px solid rgba(255, 255, 255, 0.3)'
                 }}
               >
                 Ask AI Assistant
@@ -774,14 +779,14 @@ export const HomeMissionControlApp: React.FC = () => {
               <div className="relative">
                 <Search 
                   className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4" 
-                  style={{ color: `var(--${currentColorScheme}-bg)` }}
+                  style={{ color: `var(--${currentColorScheme}-bg-deep)` }}  // Light accent color
                 />
                 <Input 
                   placeholder="Search your home..." 
                   className="pl-10 w-64 bg-white focus:ring-2"
                   style={{ 
                     backgroundColor: 'var(--neutral-canvas-light)',
-                    borderColor: `var(--${currentColorScheme}-bg)`,
+                    borderColor: `var(--${currentColorScheme}-bg-deep)`,  // Light accent color
                     color: 'var(--neutral-text-dark)'
                   }}
                 />
@@ -791,7 +796,7 @@ export const HomeMissionControlApp: React.FC = () => {
               <button
                 className="px-4 py-2 rounded-lg font-medium transition-opacity hover:opacity-90 flex items-center gap-2"
                 style={{
-                  backgroundColor: `var(--${currentColorScheme}-bg)`,
+                  backgroundColor: `var(--${currentColorScheme}-bg)`,  // Dark primary color
                   color: '#FFFFFF'
                 }}
               >
