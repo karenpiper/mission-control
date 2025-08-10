@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { DesignSystemShowcase } from './components/DesignSystemShowcase';
 import { BrandGuidelines } from './components/BrandGuidelines';
 import { HomeMissionControlApp } from './components/HomeMissionControlApp';
+import { TailwindDemo } from './src/TailwindDemo';
 import { Button } from './components/ui/button';
-import { FileText, Palette, Home, Monitor } from 'lucide-react';
+import { FileText, Palette, Home, Monitor, Sparkles } from 'lucide-react';
 
-type AppView = 'guidelines' | 'showcase' | 'app';
+type AppView = 'guidelines' | 'showcase' | 'app' | 'tailwind';
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<AppView>('guidelines');
+  const [currentView, setCurrentView] = useState<AppView>('tailwind');
 
   const renderView = () => {
     switch (currentView) {
@@ -18,8 +19,10 @@ export default function App() {
         return <DesignSystemShowcase />;
       case 'app':
         return <HomeMissionControlApp />;
+      case 'tailwind':
+        return <TailwindDemo />;
       default:
-        return <BrandGuidelines />;
+        return <TailwindDemo />;
     }
   };
 
@@ -28,6 +31,15 @@ export default function App() {
       {/* App Switcher */}
       <div className="fixed top-4 right-4 z-50">
         <div className="flex gap-2 p-2 bg-white/90 backdrop-blur-sm rounded-xl border border-neutral-border shadow-lg">
+          <Button
+            variant={currentView === 'tailwind' ? 'default' : 'ghost'}
+            size="sm"
+            onClick={() => setCurrentView('tailwind')}
+            className="flex items-center gap-2"
+          >
+            <Sparkles className="w-4 h-4" />
+            Tailwind
+          </Button>
           <Button
             variant={currentView === 'guidelines' ? 'default' : 'ghost'}
             size="sm"
