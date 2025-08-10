@@ -1,76 +1,52 @@
 import React, { useState } from 'react';
-import { DesignSystemShowcase } from './components/DesignSystemShowcase';
+import HomeDashboard from './src/HomeDashboard';
 import { BrandGuidelines } from './components/BrandGuidelines';
-import { HomeMissionControlApp } from './components/HomeMissionControlApp';
-import { TailwindDemo } from './src/TailwindDemo';
-import { Button } from './components/ui/button';
-import { FileText, Palette, Home, Monitor, Sparkles } from 'lucide-react';
 
-type AppView = 'guidelines' | 'showcase' | 'app' | 'tailwind';
+type AppView = 'home' | 'guidelines';
 
-export default function App() {
-  const [currentView, setCurrentView] = useState<AppView>('tailwind');
+function App() {
+  const [currentView, setCurrentView] = useState<AppView>('home');
 
   const renderView = () => {
     switch (currentView) {
+      case 'home':
+        return <HomeDashboard />;
       case 'guidelines':
         return <BrandGuidelines />;
-      case 'showcase':
-        return <DesignSystemShowcase />;
-      case 'app':
-        return <HomeMissionControlApp />;
-      case 'tailwind':
-        return <TailwindDemo />;
       default:
-        return <TailwindDemo />;
+        return <HomeDashboard />;
     }
   };
 
   return (
-    <div className="min-h-screen bg-neutral-canvas-light">
+    <div className="App">
       {/* App Switcher */}
-      <div className="fixed top-4 right-4 z-50">
-        <div className="flex gap-2 p-2 bg-white/90 backdrop-blur-sm rounded-xl border border-neutral-border shadow-lg">
-          <Button
-            variant={currentView === 'tailwind' ? 'default' : 'ghost'}
-            size="sm"
-            onClick={() => setCurrentView('tailwind')}
-            className="flex items-center gap-2"
-          >
-            <Sparkles className="w-4 h-4" />
-            Tailwind
-          </Button>
-          <Button
-            variant={currentView === 'guidelines' ? 'default' : 'ghost'}
-            size="sm"
-            onClick={() => setCurrentView('guidelines')}
-            className="flex items-center gap-2"
-          >
-            <FileText className="w-4 h-4" />
-            Guidelines
-          </Button>
-          <Button
-            variant={currentView === 'showcase' ? 'default' : 'ghost'}
-            size="sm"
-            onClick={() => setCurrentView('showcase')}
-            className="flex items-center gap-2"
-          >
-            <Palette className="w-4 h-4" />
-            Motif System
-          </Button>
-          <Button
-            variant={currentView === 'app' ? 'default' : 'ghost'}
-            size="sm"
-            onClick={() => setCurrentView('app')}
-            className="flex items-center gap-2"
-          >
-            <Monitor className="w-4 h-4" />
-            Live App
-          </Button>
-        </div>
+      <div className="fixed top-4 left-4 z-50 flex space-x-2">
+        <button
+          onClick={() => setCurrentView('home')}
+          className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+            currentView === 'home'
+              ? 'bg-pair-01-bg-100 text-white'
+              : 'bg-white text-neutral-text-dark hover:bg-gray-100'
+          }`}
+        >
+          Home Dashboard
+        </button>
+        <button
+          onClick={() => setCurrentView('guidelines')}
+          className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+            currentView === 'guidelines'
+              ? 'bg-pair-01-bg-100 text-white'
+              : 'bg-white text-neutral-text-dark hover:bg-gray-100'
+          }`}
+        >
+          Brand Guidelines
+        </button>
       </div>
 
       {renderView()}
     </div>
   );
 }
+
+export default App;
