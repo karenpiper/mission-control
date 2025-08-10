@@ -8,7 +8,7 @@ import {
   Settings, 
   Search, 
   FileText, 
-  Grid3X3, 
+  Grid, 
   Play,
   Thermometer,
   Shield,
@@ -35,7 +35,7 @@ const HomeDashboard: React.FC = () => {
             <span>Guidelines</span>
           </button>
           <button className="flex items-center space-x-2 text-neutral-text-dark hover:text-pair-01-bg-100">
-            <Grid3X3 size={20} />
+            <Grid size={20} />
             <span>Motif System</span>
           </button>
           <button className="flex items-center space-x-2 text-neutral-text-dark hover:text-pair-01-bg-100">
